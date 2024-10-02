@@ -1,0 +1,40 @@
+---
+title: "TMBによる最尤推定"
+subtitle: "Tokyo.R 115"
+author: "伊東宏樹"
+date: 2024-10-19
+format:
+  revealjs:
+    code-copy: true
+embed-resources: true
+slide-number: true
+editor: visual
+---
+
+## はじめに
+
+## TMB
+
+Template Model Builder
+
+## 例
+
+一般化線形混合モデル
+
+```{r}
+#| label: setup
+#| include: false
+
+library(TMB)
+library(ggplot2)
+
+# data gen.
+
+
+```
+
+## Model
+
+## おわりに
+
+tmbstan
