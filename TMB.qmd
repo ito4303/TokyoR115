@@ -3,23 +3,47 @@ title: "TMBによる最尤推定"
 subtitle: "Tokyo.R 115"
 author: "伊東宏樹"
 date: 2024-10-19
+lang: ja
 format:
   revealjs:
+    theme: simple
     code-copy: true
 embed-resources: true
 slide-number: true
 editor: visual
 ---
 
-## はじめに
+## 自己紹介
+
+-   氏名: 伊東宏樹
+
+-   3月まで森林総合研究所勤務
+
+-   4月から個人事業主（[伊東生態統計研究室](https://ito4303.sakura.ne.jp/)）
+
+-   データ解析、執筆・翻訳、研修講師などお引き受けいたします。
+
+-   出版物: 『[BUGSで学ぶ階層モデリング入門](https://www.kyoritsu-pub.co.jp/book/b10003729.html)』『[生態学のための階層モデリング](https://www.kyoritsu-pub.co.jp/book/b10003301.html)』（以上共訳）など
+
+## Kanazawa.R #2
+
+![](images/KanazawaR.jpg)
+
+-   石川県金沢市でのR勉強会
+-   第2回を11月23日開催予定（現地+オンライン）
+-   詳細はconnpassのイベントページにて
 
 ## TMB
 
-Template Model Builder
+-   Template Model Builder
+
+-   自動微分
 
 ## 例
 
 一般化線形混合モデル
+
+## データ
 
 ```{r}
 #| label: setup
@@ -28,13 +52,108 @@ Template Model Builder
 library(TMB)
 library(ggplot2)
 
-# data gen.
+# simulated data
 
+set.seed(123)
+N_group <- 8                     # number of groups
+N <- N_group * 20                # number of records
+group <- rep(1:N_group, each = N %/% N_group) # group index
+epsilon <- rnorm(N_group, 0, 1)  # random effect
+X <- runif(N, 0, 5)              # x
+Y <- rpois(N, exp(-2 + 0.5 * X + epsilon[group]))
+df <- data.frame(group = factor(group),
+                 x = X, y = Y)
+```
 
+```{r}
+#| label: data_plot
+#| fig-width: 5
+#| fig-height: 3
+
+ggplot(df) +
+  geom_point(aes(x = X, y = Y , colour = group),
+             size = 2, alpha = 0.7)
 ```
 
 ## Model
 
-## おわりに
+```{Rcpp}
+#| file: "models/poismix.cpp"
+#| filename: "poismix.cpp"
+#| echo: true
+#| eval: false
+```
 
-tmbstan
+## 実行
+
+コンパイル(`compile`)→ロード(`dyn.load`)→微分関数を作成(`MakeADFun`)→最適化(`nlminb`)
+
+```{r}
+#| label: run
+#| echo: true
+#| output: false
+
+model_name <- "poismix"
+file.path("models", paste(model_name, "cpp", sep = ".")) |>
+  compile()
+file.path("models", dynlib(model_name)) |>
+  dyn.load()
+data <- list(Y = Y, X = X, G = group - 1)
+parameters <- list(alpha = 0, beta = 1,
+                   epsilon = rep(0, N_group), log_sigma = 0)
+obj <- MakeADFun(data, parameters, DLL = model_name,
+                 random = "epsilon")
+opt<- nlminb(obj$par, obj$fn, obj$gr)
+```
+
+## 結果
+
+```{r}
+#| label: results
+#| echo: true
+
+print(opt)
+```
+
+## glmmTMB
+
+-   glmmの書式でモデル式を書ける（C++を知らなくても大丈夫）
+-   内部でTMBを利用
+
+```{r}
+#| label: glmmTMB
+#| echo: true
+
+library(glmmTMB)
+fit <- glmmTMB(Y ~ X + (1|group), data = df, family = poisson())
+```
+
+## 結果
+
+```{r}
+#| echo: true
+
+summary(fit)
+```
+
+## tmbstan
+
+-   TMBのオブジェクトを利用して、StanでMCMCによる推定
+-   局所最適を回避できる
+
+```{r}
+#| label: tmbstan
+#| echo: true
+#| output: false
+
+library(tmbstan)
+stanfit <- tmbstan(obj)
+```
+
+## 結果
+
+```{r}
+#| echo: true
+
+print(stanfit, pars = c("alpha", "beta", "log_sigma"))
+```

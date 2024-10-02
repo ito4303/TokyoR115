@@ -9,6 +9,13 @@
     ]
   },
   "Packages": {
+    "BH": {
+      "Package": "BH",
+      "Version": "1.84.0-0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "a8235afbcd6316e6e91433ea47661013"
+    },
     "MASS": {
       "Package": "MASS",
       "Version": "7.3-60.2",
@@ -40,6 +47,13 @@
         "utils"
       ],
       "Hash": "1920b2f11133b12350024297d8a4ff4a"
+    },
+    "QuickJSR": {
+      "Package": "QuickJSR",
+      "Version": "1.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "7637667f0f9a5fee609506ef049ee202"
     },
     "R6": {
       "Package": "R6",
@@ -85,6 +99,42 @@
       ],
       "Hash": "4ac8e423216b8b70cb9653d1b3f71eb9"
     },
+    "RcppParallel": {
+      "Package": "RcppParallel",
+      "Version": "5.1.9",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "f38a72a419b91faac0ce5d9eee04c120"
+    },
+    "Rdpack": {
+      "Package": "Rdpack",
+      "Version": "2.6.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "methods",
+        "rbibutils",
+        "tools",
+        "utils"
+      ],
+      "Hash": "24a964d2cf75ad25d7b843856c8d4c93"
+    },
+    "StanHeaders": {
+      "Package": "StanHeaders",
+      "Version": "2.32.10",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "RcppEigen",
+        "RcppParallel"
+      ],
+      "Hash": "c35dc5b81d7ffb1018aa090dff364ecb"
+    },
     "TMB": {
       "Package": "TMB",
       "Version": "1.9.15",
@@ -101,6 +151,28 @@
       ],
       "Hash": "a9c26d0c76fdcde77410b88197efa7bf"
     },
+    "abind": {
+      "Package": "abind",
+      "Version": "1.4-8",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "methods",
+        "utils"
+      ],
+      "Hash": "2288423bb0f20a457800d7fc47f6aa54"
+    },
+    "backports": {
+      "Package": "backports",
+      "Version": "1.5.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "e1e1b9d75c37401117b636b7ae50827a"
+    },
     "base64enc": {
       "Package": "base64enc",
       "Version": "0.1-3",
@@ -110,6 +182,18 @@
         "R"
       ],
       "Hash": "543776ae6848fde2f48ff3816d0628bc"
+    },
+    "boot": {
+      "Package": "boot",
+      "Version": "1.3-30",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "graphics",
+        "stats"
+      ],
+      "Hash": "96abeed416a286d4a0f52e550b612343"
     },
     "bslib": {
       "Package": "bslib",
@@ -144,6 +228,31 @@
       ],
       "Hash": "cd9a672193789068eb5a2aad65a0dedf"
     },
+    "callr": {
+      "Package": "callr",
+      "Version": "3.7.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "R6",
+        "processx",
+        "utils"
+      ],
+      "Hash": "d7e13f49c19103ece9e58ad2d83a7354"
+    },
+    "checkmate": {
+      "Package": "checkmate",
+      "Version": "2.3.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "backports",
+        "utils"
+      ],
+      "Hash": "0e14e01ce07e7c88fd25de6d4260d26b"
+    },
     "cli": {
       "Package": "cli",
       "Version": "3.6.3",
@@ -169,6 +278,19 @@
       ],
       "Hash": "d954cb1c57e8d8b756165d7ba18aa55a"
     },
+    "desc": {
+      "Package": "desc",
+      "Version": "1.4.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "R6",
+        "cli",
+        "utils"
+      ],
+      "Hash": "99b79fcbd6c4d1ce087f5c5c758b384f"
+    },
     "digest": {
       "Package": "digest",
       "Version": "0.6.37",
@@ -179,6 +301,23 @@
         "utils"
       ],
       "Hash": "33698c4b3127fc9f506654607fb73676"
+    },
+    "distributional": {
+      "Package": "distributional",
+      "Version": "0.5.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "generics",
+        "lifecycle",
+        "numDeriv",
+        "pillar",
+        "rlang",
+        "stats",
+        "utils",
+        "vctrs"
+      ],
+      "Hash": "76e94de462aa18ea966a38956ecf4497"
     },
     "evaluate": {
       "Package": "evaluate",
@@ -239,6 +378,17 @@
       ],
       "Hash": "15aeb8c27f5ea5161f9f6a641fafd93a"
     },
+    "generics": {
+      "Package": "generics",
+      "Version": "0.1.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "methods"
+      ],
+      "Hash": "15e9634c0fcd294799e9b2e929ed1b86"
+    },
     "ggplot2": {
       "Package": "ggplot2",
       "Version": "3.5.1",
@@ -264,6 +414,25 @@
       ],
       "Hash": "44c6a2f8202d5b7e878ea274b1092426"
     },
+    "glmmTMB": {
+      "Package": "glmmTMB",
+      "Version": "1.1.10",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "Matrix",
+        "R",
+        "RcppEigen",
+        "TMB",
+        "lme4",
+        "methods",
+        "mgcv",
+        "nlme",
+        "numDeriv",
+        "reformulas"
+      ],
+      "Hash": "09c1a82cf7f80e2289aaf8267345dfd1"
+    },
     "glue": {
       "Package": "glue",
       "Version": "1.8.0",
@@ -274,6 +443,20 @@
         "methods"
       ],
       "Hash": "5899f1eaa825580172bb56c08266f37c"
+    },
+    "gridExtra": {
+      "Package": "gridExtra",
+      "Version": "2.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "grDevices",
+        "graphics",
+        "grid",
+        "gtable",
+        "utils"
+      ],
+      "Hash": "7d7f283939f563670a697165b2cf5560"
     },
     "gtable": {
       "Package": "gtable",
@@ -316,6 +499,16 @@
         "utils"
       ],
       "Hash": "81d371a9cc60640e74e4ab6ac46dcedc"
+    },
+    "inline": {
+      "Package": "inline",
+      "Version": "0.3.19",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "methods"
+      ],
+      "Hash": "1deaf1de3eac7e1d3377954b3a283652"
     },
     "isoband": {
       "Package": "isoband",
@@ -403,6 +596,47 @@
       ],
       "Hash": "b8552d117e1b808b09a832f589b79035"
     },
+    "lme4": {
+      "Package": "lme4",
+      "Version": "1.1-35.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "MASS",
+        "Matrix",
+        "R",
+        "Rcpp",
+        "RcppEigen",
+        "boot",
+        "graphics",
+        "grid",
+        "lattice",
+        "methods",
+        "minqa",
+        "nlme",
+        "nloptr",
+        "parallel",
+        "splines",
+        "stats",
+        "utils"
+      ],
+      "Hash": "16a08fc75007da0d08e0c0388c7c33e6"
+    },
+    "loo": {
+      "Package": "loo",
+      "Version": "2.8.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "checkmate",
+        "matrixStats",
+        "parallel",
+        "posterior",
+        "stats"
+      ],
+      "Hash": "b0fe731e5bd801dda962ac5057a548f6"
+    },
     "magrittr": {
       "Package": "magrittr",
       "Version": "2.0.3",
@@ -412,6 +646,16 @@
         "R"
       ],
       "Hash": "7ce2733a9826b3aeb1775d56fd305472"
+    },
+    "matrixStats": {
+      "Package": "matrixStats",
+      "Version": "1.4.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "8885ffb1f46e820dede6b2ca9442abca"
     },
     "memoise": {
       "Package": "memoise",
@@ -451,6 +695,16 @@
       ],
       "Hash": "18e9c28c1d3ca1560ce30658b22ce104"
     },
+    "minqa": {
+      "Package": "minqa",
+      "Version": "1.2.8",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "Rcpp"
+      ],
+      "Hash": "785ef8e22389d4a7634c6c944f2dc07d"
+    },
     "munsell": {
       "Package": "munsell",
       "Version": "0.5.1",
@@ -476,6 +730,23 @@
       ],
       "Hash": "a623a2239e642806158bc4dc3f51565d"
     },
+    "nloptr": {
+      "Package": "nloptr",
+      "Version": "2.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "27550641889a3abf3aec4d91186311ec"
+    },
+    "numDeriv": {
+      "Package": "numDeriv",
+      "Version": "2016.8-1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "df58958f293b166e4ab885ebcad90e02"
+    },
     "pillar": {
       "Package": "pillar",
       "Version": "1.9.0",
@@ -493,6 +764,21 @@
       ],
       "Hash": "15da5a8412f317beeee6175fbc76f4bb"
     },
+    "pkgbuild": {
+      "Package": "pkgbuild",
+      "Version": "1.4.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "R6",
+        "callr",
+        "cli",
+        "desc",
+        "processx"
+      ],
+      "Hash": "a29e8e134a460a01e0ca67a4763c595b"
+    },
     "pkgconfig": {
       "Package": "pkgconfig",
       "Version": "2.0.3",
@@ -503,6 +789,52 @@
       ],
       "Hash": "01f28d4278f15c76cddbea05899c5d6f"
     },
+    "posterior": {
+      "Package": "posterior",
+      "Version": "1.6.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "abind",
+        "checkmate",
+        "distributional",
+        "matrixStats",
+        "methods",
+        "parallel",
+        "pillar",
+        "rlang",
+        "stats",
+        "tensorA",
+        "tibble",
+        "vctrs"
+      ],
+      "Hash": "fc1213566f2ed9f0b15bef656ed1000b"
+    },
+    "processx": {
+      "Package": "processx",
+      "Version": "3.8.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "R6",
+        "ps",
+        "utils"
+      ],
+      "Hash": "0c90a7d71988856bad2a2a45dd871bb9"
+    },
+    "ps": {
+      "Package": "ps",
+      "Version": "1.8.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "utils"
+      ],
+      "Hash": "4b9c8485b0c7eecdf0a9ba5132a45576"
+    },
     "rappdirs": {
       "Package": "rappdirs",
       "Version": "0.3.3",
@@ -512,6 +844,31 @@
         "R"
       ],
       "Hash": "5e3c5dc0b071b21fa128676560dbe94d"
+    },
+    "rbibutils": {
+      "Package": "rbibutils",
+      "Version": "2.2.16",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "tools",
+        "utils"
+      ],
+      "Hash": "8c06968e0a5b0209c5f34239b1302336"
+    },
+    "reformulas": {
+      "Package": "reformulas",
+      "Version": "0.3.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "Matrix",
+        "Rdpack",
+        "methods",
+        "stats"
+      ],
+      "Hash": "74da0864ad11d63a15d1a325c1d8ec8c"
     },
     "renv": {
       "Package": "renv",
@@ -557,6 +914,29 @@
       ],
       "Hash": "062470668513dcda416927085ee9bdc7"
     },
+    "rstan": {
+      "Package": "rstan",
+      "Version": "2.32.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "BH",
+        "QuickJSR",
+        "R",
+        "Rcpp",
+        "RcppEigen",
+        "RcppParallel",
+        "StanHeaders",
+        "ggplot2",
+        "gridExtra",
+        "inline",
+        "loo",
+        "methods",
+        "pkgbuild",
+        "stats4"
+      ],
+      "Hash": "8a5b5978f888a3477c116e0395d006f8"
+    },
     "sass": {
       "Package": "sass",
       "Version": "0.4.9",
@@ -591,6 +971,17 @@
       ],
       "Hash": "c19df082ba346b0ffa6f833e92de34d1"
     },
+    "tensorA": {
+      "Package": "tensorA",
+      "Version": "0.36.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "stats"
+      ],
+      "Hash": "0d587599172f2ffda2c09cb6b854e0e5"
+    },
     "tibble": {
       "Package": "tibble",
       "Version": "3.2.1",
@@ -619,6 +1010,23 @@
         "xfun"
       ],
       "Hash": "9db859e8aabbb474293dde3097839420"
+    },
+    "tmbstan": {
+      "Package": "tmbstan",
+      "Version": "1.0.91",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "BH",
+        "Rcpp",
+        "RcppEigen",
+        "RcppParallel",
+        "StanHeaders",
+        "TMB",
+        "methods",
+        "rstan"
+      ],
+      "Hash": "09cd520ac63d188467d40447603ca4b3"
     },
     "utf8": {
       "Package": "utf8",
