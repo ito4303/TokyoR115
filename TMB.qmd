@@ -6,7 +6,7 @@ date: 2024-10-19
 lang: ja
 format:
   revealjs:
-    theme: simple
+    theme: [default, custom.scss]
     code-copy: true
 embed-resources: true
 slide-number: true
@@ -75,9 +75,10 @@ ggplot(df) +
              size = 2, alpha = 0.7)
 ```
 
-## Model
+## モデル
 
 ```{Rcpp}
+#| label: TMB_code
 #| file: "models/poismix.cpp"
 #| filename: "poismix.cpp"
 #| echo: true
@@ -86,7 +87,7 @@ ggplot(df) +
 
 ## 実行
 
-コンパイル(`compile`)→ロード(`dyn.load`)→微分関数を作成(`MakeADFun`)→最適化(`nlminb`)
+コンパイル(`compile`)→ロード(`dyn.load`)→微分関数を作成(`MakeADFun`, `random`引数に変量効果)→最適化(`nlminb`)
 
 ```{r}
 #| label: run
@@ -103,7 +104,7 @@ parameters <- list(alpha = 0, beta = 1,
                    epsilon = rep(0, N_group), log_sigma = 0)
 obj <- MakeADFun(data, parameters, DLL = model_name,
                  random = "epsilon")
-opt<- nlminb(obj$par, obj$fn, obj$gr)
+opt <- nlminb(obj$par, obj$fn, obj$gr)
 ```
 
 ## 結果
