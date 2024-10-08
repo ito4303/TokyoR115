@@ -35,13 +35,19 @@ editor: visual
 
 ## TMB
 
--   Template Model Builder
+-   Rパッケージ (CRAN: [TMB](https://cran.r-project.org/package=TMB))
 
--   自動微分
+    -   公式ページ: [https://github.com/kaskr/adcomp/wiki](https://github.com/kaskr/adcomp/wiki){style="font-size: 75%;"}
 
+    -   ドキュメント: [https://kaskr.github.io/adcomp/\_book/Introduction.html](https://kaskr.github.io/adcomp/_book/Introduction.html){style="font-size: 75%;"}
+
+-   Template Model Builder: A General Random Effect Tool Inspired by 'ADMB'
+
+-   C++のテンプレートを使って（変量効果のある）モデルの最尤推定をおこなう。
+
+::: {style="text-align: center; margin-top: 5em;"}
 ## 例
-
-一般化線形混合モデル
+:::
 
 ## データ
 
@@ -118,8 +124,8 @@ print(opt)
 
 ## glmmTMB
 
--   glmmの書式でモデル式を書ける（C++を知らなくても大丈夫）
 -   内部でTMBを利用
+-   glmmの書式でモデル式を書ける（C++を知らなくても大丈夫）
 
 ```{r}
 #| label: glmmTMB
