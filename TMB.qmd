@@ -35,7 +35,7 @@ editor: visual
 
 ## TMB
 
--   Rパッケージ (CRAN: [TMB](https://cran.r-project.org/package=TMB))
+-   Rパッケージ ([<https://cran.r-project.org/package=TMB>]{style="font-size: 80%;"})
 
     -   公式ページ: [https://github.com/kaskr/adcomp/wiki](https://github.com/kaskr/adcomp/wiki){style="font-size: 75%;"}
 
