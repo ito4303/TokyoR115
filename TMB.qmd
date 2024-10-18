@@ -30,8 +30,8 @@ editor: visual
 ![](images/KanazawaR.jpg)
 
 -   石川県金沢市でのR勉強会
--   第2回を11月23日開催予定（現地+オンライン）
--   詳細はconnpassのイベントページにて
+-   第2回を11月23日開催（現地+オンライン）
+-   詳細はconnpassのイベントページ[(<https://kanazawar.connpass.com/event/334335/>)]{style="font-size: 80%;"}にて
 
 ## TMB
 
